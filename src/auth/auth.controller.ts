@@ -4,6 +4,7 @@ import { LoginDTO, RegisterDTO } from '../types/auth.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { Payload } from 'src/types/payload';
+import { User } from 'src/utils/user.decorator';
 
 @Controller('auth')
 export class AuthController {
@@ -21,11 +22,12 @@ export class AuthController {
     return await this.authService.signPayload(payload);
   }
 
-  @Get()
-  @UseGuards(AuthGuard('jwt'))
-  tempAuth() {
-    return { auth: 'works' };
-  }
+  // @Get()
+  // @UseGuards(AuthGuard('jwt'))
+  // async findAll(@User() user: any) {
+  //   console.log({ user });
+  //   return await this.userService.findAll();
+  // }
 
   @Post('login')
   async login(@Body() userDTO: LoginDTO) {

@@ -8,6 +8,7 @@ import * as argon from 'argon2';
 
 @Injectable()
 export class UserService {
+  [x: string]: any;
   constructor(@InjectModel('User') private userModel: Model<IUser>) {}
 
   throwError(errMsg, type) {

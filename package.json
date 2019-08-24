@@ -5,7 +5,8 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "gcp-build": "npm run build",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "npm run start:prod",
     "start:dev": "nodemon",
