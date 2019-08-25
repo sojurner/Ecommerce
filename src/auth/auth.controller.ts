@@ -14,8 +14,8 @@ export class AuthController {
   ) {}
 
   createPayload(user): Payload {
-    const { username, seller } = user;
-    return { username, seller };
+    const { username } = user;
+    return { username };
   }
 
   async createToken(payload) {

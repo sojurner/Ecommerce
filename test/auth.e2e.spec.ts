@@ -29,7 +29,6 @@ describe('AUTH', () => {
       .expect(({ body }) => {
         expect(body.token).toBeDefined();
         expect(body.user.username).toEqual('username');
-        expect(body.user.seller).toBeFalsy();
       })
       .expect(HttpStatus.CREATED);
   });

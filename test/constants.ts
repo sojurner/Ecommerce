@@ -6,4 +6,6 @@ export const database: string = process.env.MONGO_URI;
 export const endPoints = {
   register: '/auth/register',
   login: '/auth/login',
+  favorites: '/favorite',
+  favoritesByUser: '/favorite/user/',
 };
